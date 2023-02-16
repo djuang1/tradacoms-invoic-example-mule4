@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:tradacoms="http://www.mulesoft.org/schema/mule/tradacoms"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/tradacoms http://www.mulesoft.org/schema/mule/tradacoms/current/mule-tradacoms.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<tradacoms:config name="TRADACOMS_EDI_Config" doc:name="TRADACOMS EDI Config" doc:id="91d54f9b-f46b-43aa-ad13-369844c4016b" >
+		<tradacoms:schemas >
+			<tradacoms:schema value="INVOIC_DEMO.esl" />
+		</tradacoms:schemas>
+	</tradacoms:config>
+	<configuration-properties doc:name="Configuration properties" doc:id="e9db209a-fda7-490c-b509-1602517690e1" file="mule-properties.yaml" />
+	<flow name="tradecoms-exampleFlow" doc:id="9d4a7b0f-0c13-4e07-b857-0f6efce40a0e" >
+		<file:listener doc:name="On New or Updated File" doc:id="5d989b75-3aa3-4505-8d0c-d364aa843e34" directory="${file.projectfolder}/src/main/resources/in" moveToDirectory="${file.projectfolder}/src/main/resources/out">
+			<scheduling-strategy >
+				<fixed-frequency />
+			</scheduling-strategy>
+		</file:listener>
+		<tradacoms:read doc:name="Read" doc:id="71c356af-d70b-4ffe-90f6-65469402a8db" config-ref="TRADACOMS_EDI_Config"/>
+		<ee:transform doc:name="Transform Message" doc:id="95818802-79e7-4ac8-a171-8a3da2ea9cb6" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<file:write doc:name="Write" doc:id="7b5f6e1c-a6d8-43d1-85b4-648734583520" path="${file.projectfolder}/src/main/resources/out/invoic.json"/>
+	</flow>
+</mule>

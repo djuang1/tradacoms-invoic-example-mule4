@@ -1,0 +1,2804 @@
+form: TRADACOMS
+segments: 
+- id: 'ACD'
+  name: 'AUDIT CONTROL DETAILS'
+  values: 
+  - id: 'INLO'
+    name: 'Invoice System Location Details'
+    usage: O
+    values: 
+    - { name: 'Invoice System EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Invoice System Supplier''s Own Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'ADJ'
+  name: 'ADDITIONAL ADJUSTMENTS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'ADJF'
+    name: 'Adjustment Factor'
+    usage: O
+    values: 
+    - { name: 'Adjustment Factor Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Adjustment Factor Value', usage: M, type: num.5, length: 6 }
+    - { name: 'Negative Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+- id: 'ADT'
+  name: 'ADJUSTMENT FILE TOTALS'
+  values: 
+  - { id: 'FTNA', name: 'File Total Number of', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'AFT'
+  name: 'AVAILABILITY FILE TOTALS'
+  values: 
+  - { id: 'FTAR', name: 'File Total of Availability REPORTs', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'AGD'
+  name: 'ADVICE OF GOODS DESPATCHED'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DELQ'
+    name: 'Delivery Quantity'
+    usage: O
+    values: 
+    - { name: 'Number of Order Units in Delivery', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure of Delivery', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'DELN'
+    name: 'Delivery Note Details'
+    usage: O
+    values: 
+    - { name: 'Delivery Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date of Document', usage: O, type: int, length: 6 }
+- id: 'ALD'
+  name: 'ACKNOWLEDGEMENT LINE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for his', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: O
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Order Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'OQTY'
+    name: 'Quantity Ordered'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Ordered', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Ordered', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'OUBA'
+    name: 'Outstanding Balance'
+    usage: O
+    values: 
+    - { name: 'Oustanding Balance', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Balance Date', usage: O, type: int, length: 6 }
+  - id: 'AUCT'
+    name: 'Acknowledged Unit Cost Price'
+    usage: O
+    values: 
+    - { name: 'Cost Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'SPRS'
+    name: 'Supplier''s Substituted Product'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Article Number for the', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s code for the Traded', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded', usage: O, type: int, length: 14 }
+- id: 'AOR'
+  name: 'ACKNOWLEDGEMENT OF ORDER'
+  values: 
+  - id: 'ORNO'
+    name: 'Order Number and Date'
+    usage: M
+    values: 
+    - { name: 'Customer''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Order Placed by Customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Order Received by Supplier', usage: O, type: int, length: 6 }
+  - { id: 'TCDE', name: 'Transaction Code', usage: O, type: int, length: 4 }
+- id: 'APD'
+  name: 'AMOUNT PAYABLE'
+  values: 
+  - { id: 'AMPY', name: 'Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 15 }
+- id: 'AQD'
+  name: 'EXPECTED DELIVERY DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'RDAT', name: 'Requested Delivery Date', usage: O, type: int, length: 6 }
+  - id: 'RQTY'
+    name: 'Quantity Required'
+    usage: O
+    values: 
+    - { name: 'Number of Traded Units Required', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Required', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'XDAT', name: 'Expected Delivery Date', usage: O, type: int, length: 6 }
+  - id: 'XQTY'
+    name: 'Quantity Expected'
+    usage: O
+    values: 
+    - { name: 'Number of Traded Units Expected', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Expected', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'ARF'
+  name: 'AVAILABILITY REFERENCES'
+  values: 
+  - { id: 'AREF', name: 'Availability References/Series No.', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'RPSD', name: 'Report Period Start Date', usage: M, type: int, length: 6 }
+  - { id: 'RPED', name: 'Report Period End Date', usage: M, type: int, length: 6 }
+- id: 'ATR'
+  name: 'AVAILABILITY TRAILER'
+  values: 
+  - { id: 'NOPA', name: 'Number of Availability REPORTS', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'AUT'
+  name: 'AUTHENTICATION RESULT'
+  values: 
+  - id: 'AUTR'
+    name: 'Authentication Result'
+    usage: M
+    values: 
+    - { name: 'Authentication Result 1', usage: M, type: char, minLength: 1, maxLength: 70 }
+    - { name: 'Authentication Result 2', usage: O, type: char, minLength: 1, maxLength: 70 }
+    - { name: 'Authentication Result 3', usage: O, type: char, minLength: 1, maxLength: 70 }
+- id: 'AVD'
+  name: 'AVAILABILITY LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'APIN', name: 'Actual/Proposed Status Indicator', usage: M, type: char, length: 1 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Unit of', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'CLSK'
+    name: 'Closing Stock for the Period'
+    usage: O
+    values: 
+    - { name: 'Number of Closing Stock Order Units', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure of Closing Stock', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'QPRO'
+    name: 'Quantity Produced'
+    usage: O
+    values: 
+    - { name: 'Number of Order Units Produced', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Produced this Period', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'DELQ'
+    name: 'Delivery Quantity'
+    usage: O
+    values: 
+    - { name: 'Number of Traded Units in Delivery', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure of Delivery', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'BCD'
+  name: 'BILL CONTROL DATA'
+  values: 
+  - { id: 'IVDT', name: 'Date of Invoice', usage: M, type: int, length: 6 }
+  - { id: 'TXDT', name: 'Tax-point Date', usage: M, type: int, length: 6 }
+  - { id: 'INVN', name: 'Invoice Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'PBID', name: 'Previous Bill Date', usage: O, type: int, length: 6 }
+  - { id: 'BIFR', name: 'Bill Frequency Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'BTCD', name: 'Bill Type Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'VDAA'
+    name: 'VAT Declaration for Amended Account'
+    usage: O
+    values: 
+    - { name: 'VAT Declaration Code', usage: M, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Date of Bill Withdrawn', usage: M, type: int, length: 6 }
+    - { name: 'VAT Total Amount on Bill Withdrawn', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Amended Invoice Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Premises Reference of Previous Bill', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'SUMO'
+    name: 'Supply Period'
+    usage: O
+    values: 
+    - { name: 'Start Date', usage: O, type: int, length: 6 }
+    - { name: 'End Date', usage: O, type: int, length: 6 }
+  - id: 'CLVM'
+    name: 'Calorific Value in Specified Units'
+    usage: O
+    values: 
+    - { name: 'Calorific Value', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: M, type: char, minLength: 1, maxLength: 6 }
+- id: 'BDT'
+  name: 'BANK DETAILS'
+  values: 
+  - { id: 'BKIC', name: 'Bank Identity Code', usage: M, type: char, length: 2 }
+  - { id: 'BNAM', name: 'Bank Name', usage: O, type: char, minLength: 1, maxLength: 35 }
+  - id: 'SVID'
+    name: 'Service Identity'
+    usage: M
+    values: 
+    - { name: 'Service Code', usage: M, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'User Code', usage: M, type: char, minLength: 1, maxLength: 8 }
+  - { id: 'BKIN', name: 'Bank Information', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CUIN', name: 'Currency Indicator', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'BTL'
+  name: 'BILL TRAILER'
+  values: 
+  - id: 'PTOT'
+    name: 'Total of Payment Details'
+    usage: O
+    values: 
+    - { name: 'Total of Payment Details', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'UVLT'
+    name: 'Total Charge for Premises Before VAT'
+    usage: M
+    values: 
+    - { name: 'Total Charge Before VAT', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'UTVA'
+    name: 'Bill Total VAT Amount Payable'
+    usage: M
+    values: 
+    - { name: 'Bill Total VAT Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'BABF'
+    name: 'Balance Brought Forward'
+    usage: O
+    values: 
+    - { name: 'Balance Brought Forward', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'TBTL'
+    name: 'Total Bill Amount Payable'
+    usage: M
+    values: 
+    - { name: 'Total Bill Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+- id: 'CBK'
+  name: 'CUSTOMER''S BANK DETAILS'
+  values: 
+  - { id: 'BBID', name: 'Bank/Branch Identifier', usage: M, type: char, minLength: 1, maxLength: 11 }
+  - id: 'ACID'
+    name: 'Account Identifier'
+    usage: M
+    values: 
+    - { name: 'Account Number', usage: M, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Account Name', usage: O, type: char, minLength: 1, maxLength: 35 }
+- id: 'CCD'
+  name: 'CONSUMPTION/CHARGE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CCDE'
+    name: 'Charge Type Code'
+    usage: M
+    values: 
+    - { name: 'Consumption/Charge Indicator', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'EAN-13 Article Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'TCOD'
+    name: 'Tariff Code'
+    usage: O
+    values: 
+    - { name: 'Tariff Code', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Tariff Description', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'TMOD'
+    name: 'Tariff Code Modifier'
+    usage: O
+    values: 
+    - { name: 'Tariff Code Modifier 1', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Tariff Code Modifier 2', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Tariff Code Modifier 3', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Tariff Code Modifier 4', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'MTNR', name: 'Meter Number', usage: O, type: char, minLength: 1, maxLength: 35 }
+  - { id: 'MLOC', name: 'Meter Location', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'PRDT', name: 'Present Read Date', usage: O, type: int, length: 6 }
+  - { id: 'PVDT', name: 'Previous Read Date', usage: O, type: int, length: 6 }
+  - { id: 'NDRP', name: 'Reading Period', usage: O, type: int, minLength: 1, maxLength: 3 }
+  - id: 'PRRD'
+    name: 'Reading Data'
+    usage: O
+    values: 
+    - { name: 'Present Reading', usage: M, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Type', usage: O, type: char, minLength: 1, maxLength: 4 }
+    - { name: 'Previous Reading', usage: M, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Type', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'CONS'
+    name: 'Consumption (Billing Units)'
+    usage: O
+    values: 
+    - { name: 'Units Consumed', usage: M, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: M, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Negative Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'CONB'
+    name: 'Consumption (Base Units)'
+    usage: O
+    values: 
+    - { name: 'Units Consumed', usage: M, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: M, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Negative Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'ADJF'
+    name: 'Adjustment Factor'
+    usage: O
+    values: 
+    - { name: 'Adjustment Factor Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Adjustment Factor Value', usage: M, type: num.5, minLength: 6, maxLength: 15 }
+    - { name: 'Negative Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'CONA'
+    name: 'Consumption (Adjusted Units)'
+    usage: O
+    values: 
+    - { name: 'Units Consumed', usage: M, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: M, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Negative Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'BPRI', name: 'Base Price Per Unit', usage: O, type: num.5, minLength: 6, maxLength: 15 }
+  - id: 'NUCT'
+    name: 'Number of Units for Charge Type'
+    usage: O
+    values: 
+    - { name: 'Units Billed', usage: M, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: M, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Negative Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'CSDT', name: 'Charge Start Date', usage: O, type: int, length: 6 }
+  - { id: 'CEDT', name: 'Charge End Date', usage: O, type: int, length: 6 }
+  - { id: 'CPPU', name: 'Price per Unit', usage: O, type: num.5, minLength: 6, maxLength: 15 }
+  - id: 'CTOT'
+    name: 'Total Charge for Charge Type'
+    usage: O
+    values: 
+    - { name: 'Total Charge for Charge Type', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'TSUP', name: 'VAT - Type of Supply', usage: O, type: char, length: 1 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: O, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: O, type: num.3, minLength: 4, maxLength: 6 }
+  - id: 'MSAD'
+    name: 'Meter Sub-address'
+    usage: O
+    values: 
+    - { name: 'Sub-address Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Sub-address Line', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'CDA'
+  name: 'CONTRACT DATA'
+  values: 
+  - { id: 'CPSC', name: 'Current Price Schedule Reference', usage: O, type: char, length: 17 }
+  - id: 'ORNO'
+    name: 'Order Number and Date'
+    usage: O
+    values: 
+    - { name: 'Customer''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Order Placed by customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Order Received by Supplier', usage: O, type: int, length: 6 }
+  - { id: 'INSD', name: 'Installation Date', usage: O, type: int, length: 6 }
+  - { id: 'REPE', name: 'Rental Period', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'CDT'
+  name: 'CUSTOMER DETAILS'
+  values: 
+  - id: 'CIDN'
+    name: 'Customer''s Identity'
+    usage: M
+    values: 
+    - { name: 'Customer''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Identity Allocated by', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CNAM', name: 'Customer''s Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'CADD'
+    name: 'Customer''s Address'
+    usage: O
+    values: 
+    - { name: 'Customer''s Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+  - id: 'VATR'
+    name: 'Customer''s VAT Registration Number'
+    usage: O
+    values: 
+    - { name: 'Numeric VAT Registration Number', usage: O, type: int, length: 9 }
+    - { name: 'Alphanumeric VAT Registration', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'CFT'
+  name: 'CUSTOMER INFORMATION FILE'
+  values: 
+  - { id: 'NOLR', name: 'Number of Location Records', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'CIA'
+  name: 'COMPLEX INVOICE LINE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'DTYP', name: 'Discount Type', usage: M, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'AOCI', name: 'Allowance (Discount)/Charge Indicator', usage: M, type: char, length: 1 }
+  - { id: 'ACCR', name: 'Accumulation Rules', usage: M, type: char, length: 1 }
+  - id: 'AADJ'
+    name: 'Actual Adjustment'
+    usage: M
+    values: 
+    - { name: 'Adjustment Percentage', usage: O, type: num.3, minLength: 4, maxLength: 6 }
+    - { name: 'Adjustment Amount', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+- id: 'CLD'
+  name: 'CREDIT NOTE LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Article Number for Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code.', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: O
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'QTYC'
+    name: 'Quantity Credited'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Credited', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Credited', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UCRV'
+    name: 'Unit Credit Value (before VAT)'
+    usage: M
+    values: 
+    - { name: 'Credit Value (before VAT)', usage: M, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'EXLV', name: 'Nett Credit Value (before VAT)', usage: M, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - id: 'CRRE'
+    name: 'Reason for Credit'
+    usage: M
+    values: 
+    - { name: 'ANA Credit Reason Code', usage: O, type: char, length: 2 }
+    - { name: 'Trading Partner''s Own Code', usage: O, type: char, minLength: 1, maxLength: 2 }
+    - { name: 'Credit Reason Description', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'MIXI', name: 'Mixed VAT Rate Product Indicator', usage: O, type: int, length: 1 }
+  - { id: 'DRLI', name: 'Debit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'UCRB', name: 'Unit Credit Value Before Discount and', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'CDSV', name: 'Credit Discount Value', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'IGPI', name: 'Item Group Identifier', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'CLO'
+  name: 'CUSTOMER''S LOCATION'
+  values: 
+  - id: 'CLOC'
+    name: 'Customer''s Location'
+    usage: M
+    values: 
+    - { name: 'Customer''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Identification of Customer''s', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CNAM', name: 'Customer''s name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'CADD'
+    name: 'Customer''s address'
+    usage: O
+    values: 
+    - { name: 'Customer''s address line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s address line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s address line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s address line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+- id: 'CLP'
+  name: 'CUSTOMER''S LOCATION'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CLOS'
+    name: 'Start Customer''s Location Identity'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Identification', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'CLOE'
+    name: 'End Customer''s Location Identity'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Identification', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'REGS', name: 'Supplier''s Region Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'REGC', name: 'Customer''s Region Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'CLR'
+  name: 'CUSTOMER''S LOCATION'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CLOS'
+    name: 'Start Customer''s Location Identity'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s own code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s identification', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'CLOE'
+    name: 'End Customer''s Location Identity'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Identification', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'REGS', name: 'Supplier''s Region Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'REGC', name: 'Customer''s Region Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'COD'
+  name: 'COMPLEX ORDER LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: O
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'OQTY'
+    name: 'Quantity Ordered'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Ordered', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Ordered', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'OUCT'
+    name: 'Ordering Unit Cost'
+    usage: O
+    values: 
+    - { name: 'Cost Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'PIND', name: 'Special Price Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'TFIN', name: 'To Follow Indicator', usage: O, type: char, length: 1 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'SCRF'
+    name: 'Specification/contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'COT'
+  name: 'CONFIRMATION FILE TOTALS'
+  values: 
+  - { id: 'FTCO', name: 'File Total of Confirmations', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'CPT'
+  name: 'COMMUNICATING PARTNERS'
+  values: 
+  - id: 'SEID'
+    name: 'Sender''s Identity'
+    usage: M
+    values: 
+    - { name: 'Sender''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Sender''s Own Identity Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'REID'
+    name: 'Recipient''s Identity'
+    usage: M
+    values: 
+    - { name: 'Recipient''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Recipient''s Own Identity Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'CRF'
+  name: 'CREDIT NOTE REFERENCES'
+  values: 
+  - { id: 'CRNR', name: 'Credit Note Number', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CRDT', name: 'Credit Note Date', usage: M, type: int, length: 6 }
+  - { id: 'TXDT', name: 'Tax-point Date', usage: M, type: int, length: 6 }
+  - { id: 'DNNR', name: 'Debit Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'DNDT', name: 'Debit Note Date', usage: O, type: int, length: 6 }
+  - { id: 'CNNR', name: 'Collection Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CNDT', name: 'Collection Note Date', usage: O, type: int, length: 6 }
+- id: 'CST'
+  name: 'VAT RATE CREDIT SUB-TRAILER'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - { id: 'NRIL', name: 'Number of Item Lines', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'LVLA', name: 'Line Sub-Total Amount (before settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'QYCA', name: 'Discount Reclaimed for Credit Quantity', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VLCA', name: 'Discount Reclaimed for Credit Value', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'EVLA', name: 'Extended Sub-Total Amount (before', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SEDA', name: 'Sub-Total Settlement Discount Amount', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'ASDA', name: 'Extended Sub-Total Amount (after', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VATA', name: 'VAT Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'APSE', name: 'Payable Sub-Total Amount (before', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'APSI', name: 'Payable Sub-Total Amount (after', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'CTR'
+  name: 'CREDIT NOTE TRAILER'
+  values: 
+  - { id: 'NCST', name: 'Number of Total Segments', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'LVLT', name: 'Lines Total Amount (before settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'QYCT', name: 'Total Discount Reclaimed for Credit', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VLCT', name: 'Total Discount Reclaimed for Credit', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'EVLT', name: 'Total Extended Amount (before settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SEDT', name: 'Total Settlement Amount', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'ASDT', name: 'Total Amount (after settlement discount', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TVAT', name: 'Total VAT Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TPSE', name: 'Total Payable (before settlement discount)', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TPSI', name: 'Total Payable (after settlement discount)', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'DCD'
+  name: 'DELIVERY CONFIRMATION'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'DELQ'
+    name: 'Delivery Quantity'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units in Delivery', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure of Delivery', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: O, type: char, length: 1 }
+  - id: 'DUAC'
+    name: 'Delivery/Uplift Action Details'
+    usage: O
+    values: 
+    - { name: 'Reason for Variance', usage: M, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Delivery Confirmation Action', usage: O, type: char, length: 1 }
+  - id: 'AQTY'
+    name: 'Advised Quantity'
+    usage: O
+    values: 
+    - { name: 'Number of Traded Units required', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Ordered', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'SREF', name: 'Secondary Reference Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'DCT'
+  name: 'DELIVERY CONFIRMATION'
+  values: 
+  - { id: 'LCON', name: 'Lines Confirmed', usage: O, type: int, minLength: 1, maxLength: 10 }
+- id: 'DEF'
+  name: 'DEFERRED CHARGES'
+  values: 
+  - { id: 'MCDV', name: 'Monthly Charge Deferred Value', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'DEL'
+  name: 'DELIVERY REFERENCE'
+  values: 
+  - id: 'DELN'
+    name: 'Delivery Note Details'
+    usage: M
+    values: 
+    - { name: 'Delivery Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date of Document', usage: O, type: int, length: 6 }
+  - { id: 'NODU', name: 'Number of Delivery or Uplift Units', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - { id: 'SCAR', name: 'Name of Carrier', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'DEWT'
+    name: 'Delivery Weights'
+    usage: O
+    values: 
+    - { name: 'Vehicle Tare Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Total Goods Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+  - { id: 'DEVL', name: 'Delivery Volume', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+  - { id: 'EDAT', name: 'Earliest Delivery Date', usage: O, type: int, length: 6 }
+  - { id: 'LDAT', name: 'Latest Delivery Date', usage: O, type: int, length: 6 }
+  - id: 'RATM'
+    name: 'Required Arrival Time'
+    usage: O
+    values: 
+    - { name: 'Earliest Time', usage: O, type: int, length: 4 }
+    - { name: 'Latest Time', usage: O, type: int, length: 4 }
+  - id: 'DINS'
+    name: 'Delivery Instruction Narrative'
+    usage: O
+    values: 
+    - { name: 'Delivery Instruction Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'DLOC'
+    name: 'Despatch Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Suppliers Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'TLOC'
+    name: 'Transshipment Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Suppliers Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'JORF', name: 'Journey Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'TPST', name: 'Transaction Planning Status', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'DFT'
+  name: 'FILE TOTALS - DELIVERIES'
+  values: 
+  - { id: 'FTDE', name: 'File Total Number of Deliveries', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'DIN'
+  name: 'DELIVERY INSTRUCTIONS'
+  values: 
+  - { id: 'EDAT', name: 'Earliest Delivery Date', usage: O, type: int, length: 6 }
+  - { id: 'LDAT', name: 'Latest Delivery Date', usage: O, type: int, length: 6 }
+  - id: 'RATM'
+    name: 'Required Arrival Time'
+    usage: O
+    values: 
+    - { name: 'Earliest Time', usage: O, type: int, length: 4 }
+    - { name: 'Latest Time', usage: O, type: int, length: 4 }
+  - id: 'DINS'
+    name: 'Delivery Instruction Narrative'
+    usage: O
+    values: 
+    - { name: 'Delivery Instruction Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'DINN', name: 'Delivery Instruction Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'DLD'
+  name: 'DELIVERY LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'Dun-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'DELQ'
+    name: 'Delivery Quantity'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units in Delivery', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure of Delivery', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: O, type: char, length: 1 }
+- id: 'DLS'
+  name: 'DELIVERY LINE SUPPLEMENTARY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TFIN', name: 'To Follow Indicator', usage: O, type: char, length: 1 }
+  - id: 'QUTF'
+    name: 'Quantity To-Follow or Cancelled'
+    usage: O
+    values: 
+    - { name: 'Number of Order Units', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'SPRS'
+    name: 'Supplier''s Substituted Product Number'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'Dun-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACS', name: 'Supplier''s EAN Article Number for', usage: O, type: int, length: 13 }
+  - id: 'CPRS'
+    name: 'Customer''s Substituted Product Code'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand Number (EAN)', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - { id: 'PIND', name: 'Special Price Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'CRLI', name: 'Credit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+- id: 'DNA'
+  name: 'DATA NARRATIVE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DNAC'
+    name: 'Data Narrative Code'
+    usage: O
+    values: 
+    - { name: 'Code Table Number', usage: O, type: int, minLength: 1, maxLength: 4 }
+    - { name: 'Code Value', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'RTEX'
+    name: 'Registered Text'
+    usage: O
+    values: 
+    - { name: 'First Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Second Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Third Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Fourth Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'GNAR'
+    name: 'General Narrative'
+    usage: O
+    values: 
+    - { name: 'General Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'DNB'
+  name: 'DATA NARRATIVE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DNAC'
+    name: 'Data Narrative Code'
+    usage: O
+    values: 
+    - { name: 'Code Table Number', usage: O, type: int, minLength: 1, maxLength: 4 }
+    - { name: 'Code Value', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'RTEX'
+    name: 'Registered Text'
+    usage: O
+    values: 
+    - { name: 'First Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Second Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Third Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Fourth Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'GNAR'
+    name: 'General Narrative'
+    usage: O
+    values: 
+    - { name: 'General Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'DNC'
+  name: 'DATA NARRATIVE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DNAC'
+    name: 'Data Narrative Code'
+    usage: O
+    values: 
+    - { name: 'Code Table Number', usage: O, type: int, minLength: 1, maxLength: 4 }
+    - { name: 'Code Value', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'RTEX'
+    name: 'Registered Text'
+    usage: O
+    values: 
+    - { name: 'First Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Second Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Third Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Fourth Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'GNAR'
+    name: 'General Narrative'
+    usage: O
+    values: 
+    - { name: 'General Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'DNS'
+  name: 'DELIVERY NOTE SUPPLEMENTARY'
+  values: 
+  - id: 'DIND'
+    name: 'Delivery Indicators'
+    usage: O
+    values: 
+    - { name: 'Substitution Indicator', usage: O, type: char, length: 1 }
+    - { name: 'Back Order Indicator', usage: O, type: char, length: 1 }
+  - { id: 'SDIN', name: 'Split Delivery Indicator', usage: O, type: char, length: 1 }
+- id: 'DPI'
+  name: 'DELIVERED PALLET IDENTITY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SESH', name: 'Serial Shipping Container Code ', usage: M, type: int, length: 18 }
+- id: 'DSC'
+  name: 'DISCOUNT HEADER'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DAPD'
+    name: 'Discount Applicability Dates'
+    usage: M
+    values: 
+    - { name: 'Start Date', usage: M, type: int, length: 6 }
+    - { name: 'End Date', usage: O, type: int, length: 6 }
+  - { id: 'DTYP', name: 'Discount Type', usage: O, type: char, length: 1 }
+- id: 'DSD'
+  name: 'DISCOUNT DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQD', name: 'Fourth Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DQGD'
+    name: 'Quantity Graduations'
+    usage: O
+    values: 
+    - { name: 'Traded Units From', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure From', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Traded Units To', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure To', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'DVGD'
+    name: 'Value Graduations'
+    usage: O
+    values: 
+    - { name: 'From', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'To', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'ADJT', name: 'Adjustment Type Indicator', usage: M, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'AOCI', name: 'Allowance/Charge Indicator', usage: M, type: char, length: 1 }
+  - { id: 'ACCR', name: 'Accumulation Rules', usage: M, type: char, length: 1 }
+  - id: 'AADJ'
+    name: 'Actual Adjustment'
+    usage: M
+    values: 
+    - { name: 'Adjustment Percentage', usage: O, type: num.3, minLength: 4, maxLength: 6 }
+    - { name: 'Adjustment Amount', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+- id: 'DST'
+  name: 'DELIVERY STATUS'
+  values: 
+  - { id: 'DELC', name: 'Delivery Condition', usage: M, type: char, minLength: 1, maxLength: 3 }
+  - id: 'DUAC'
+    name: 'Delivery/Uplift Action Details'
+    usage: O
+    values: 
+    - { name: 'Reason for Variance', usage: M, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Delivery Confirmation Action', usage: O, type: char, length: 1 }
+- id: 'DTR'
+  name: 'DELIVERY TRAILER'
+  values: 
+  - { id: 'LDEL', name: 'Lines Delivered', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'EXC'
+  name: 'EXCEPTION CONDITIONS'
+  values: 
+  - { id: 'SEQA', name: 'Exception Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'AEXC'
+    name: 'Area of Exception Condition'
+    usage: O
+    values: 
+    - { name: 'Area of Exception Condition', usage: M, type: char, length: 13 }
+    - { name: 'Repeat of original content', usage: O, type: char, minLength: 1, maxLength: 53 }
+  - { id: 'ECOD', name: 'Exception Code', usage: M, type: char, length: 4 }
+  - { id: 'ETXT', name: 'Exception Text', usage: O, type: char, minLength: 1, maxLength: 35 }
+- id: 'FDT'
+  name: 'FILE PERIOD DATES'
+  values: 
+  - { id: 'IVED', name: 'Invoice Period End Date', usage: O, type: int, length: 6 }
+  - { id: 'DVED', name: 'Delivery Period End Date', usage: O, type: int, length: 6 }
+- id: 'FIL'
+  name: 'FILE DETAILS'
+  values: 
+  - { id: 'FLGN', name: 'File Generation Number', usage: M, type: int, minLength: 1, maxLength: 4 }
+  - { id: 'FLVN', name: 'File Version Number', usage: M, type: int, minLength: 1, maxLength: 4 }
+  - { id: 'FLDT', name: 'File Creation Date', usage: M, type: int, length: 6 }
+  - { id: 'FLID', name: 'File (Reel) Identification', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'GFT'
+  name: 'GENERAL COMMUNICATIONS FILE'
+  values: 
+  - { id: 'NOTX', name: 'Number of Text Segments', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'ILD'
+  name: 'INVOICE LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: O
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'QTYI'
+    name: 'Quantity Invoiced'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Invoiced', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Invoiced', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'AUCT'
+    name: 'Unit Cost Price (excluding VAT)'
+    usage: M
+    values: 
+    - { name: 'Cost Price (excluding VAT)', usage: M, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'LEXC', name: 'Extended Line Cost (excluding VAT)', usage: M, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - { id: 'MIXI', name: 'Mixed VAT Rate Product Indicator', usage: O, type: int, length: 1 }
+  - { id: 'CRLI', name: 'Credit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'MSPR'
+    name: 'Selling On Price'
+    usage: O
+    values: 
+    - { name: 'Manufacturer''s Recommended Selling', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Marked Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Split Pack Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'SRSP', name: 'Statutory Retail Selling Price (including', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'BUCT', name: 'Unit Cost Price (excluding VAT) before', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'DSCV', name: 'Discount Value', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'DSCP', name: 'Discount Percentage', usage: O, type: num.3, minLength: 4, maxLength: 6 }
+  - { id: 'SUBA', name: 'Subsidy Amount', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'PIND', name: 'Special Price Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'IGPI', name: 'Item Group Identifier', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'CSDI', name: 'Cash Settlement Discount Identifier', usage: O, type: char, length: 1 }
+  - { id: 'TSUP', name: 'VAT - Type of Supply', usage: O, type: char, length: 1 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'INT'
+  name: 'INVOICE TO'
+  values: 
+  - id: 'ILOC'
+    name: 'Invoice Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Invoice Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'IRF'
+  name: 'INVOICE REFERENCES'
+  values: 
+  - { id: 'INVN', name: 'Invoice Number', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'IVDT', name: 'Date of Invoice', usage: M, type: int, length: 6 }
+  - { id: 'TXDT', name: 'Tax-point Date', usage: M, type: int, length: 6 }
+- id: 'ITD'
+  name: 'INVOICE TO LOCATION'
+  values: 
+  - id: 'ILOC'
+    name: 'Invoice Location'
+    usage: O
+    values: 
+    - { name: 'Invoice EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Invoice Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CTNM', name: 'Contact Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'IADD'
+    name: 'Invoice to Address'
+    usage: O
+    values: 
+    - { name: 'Invoice to Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Invoice to Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Invoice to Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Invoice to Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+- id: 'KFT'
+  name: 'ACKNOWLEDGEMENT OF'
+  values: 
+  - { id: 'FTAK', name: 'File Total Number of', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'KTR'
+  name: 'ACKNOWLEDGEMENT TRAILER'
+  values: 
+  - { id: 'LACK', name: 'Lines Acknowledgement', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'LFT'
+  name: 'PLANNING REPORT MESSAGES'
+  values: 
+  - { id: 'FTSR', name: 'File Total Detail Messages', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'LMI'
+  name: 'MISCELLANEOUS INFORMATION'
+  values: 
+  - { id: 'BINN', name: 'Booking in Necessity', usage: O, type: char, length: 1 }
+  - { id: 'TFAC', name: 'To Follow Acceptability', usage: O, type: char, length: 1 }
+  - id: 'DINS'
+    name: 'Delivery Instruction Narrative'
+    usage: O
+    values: 
+    - { name: 'Delivery Instruction Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Delivery Instruction Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'LTY'
+  name: 'LOCATION TYPE'
+  values: 
+  - { id: 'ORDF', name: 'Order From', usage: M, type: char, length: 1 }
+  - { id: 'DELT', name: 'Deliver To', usage: M, type: char, length: 1 }
+  - { id: 'INVT', name: 'Invoice To', usage: M, type: char, length: 1 }
+  - { id: 'STAT', name: 'Statement To', usage: M, type: char, length: 1 }
+  - { id: 'DESF', name: 'Despatch From', usage: M, type: char, length: 1 }
+  - { id: 'PMNT', name: 'Payment To', usage: M, type: char, length: 1 }
+  - { id: 'ETFT', name: 'Electronic Transmission From/To', usage: M, type: char, length: 1 }
+  - { id: 'REGC', name: 'Customer''s Region Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'OUTY', name: 'Type of Outlet Code', usage: O, type: char, minLength: 1, maxLength: 2 }
+- id: 'MAN'
+  name: 'METER ADMINISTRATION NUMBER'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'MADN', name: 'Distribution Identifier', usage: M, type: char, length: 2 }
+  - { name: 'Unique Reference Number', usage: M, type: char, minLength: 1, maxLength: 10 }
+  - { name: 'Check Digit', usage: O, type: int, length: 1 }
+  - { name: 'Profile Type (class)', usage: O, type: int, length: 2 }
+  - { name: 'Meter/time switch details', usage: O, type: int, length: 3 }
+  - { name: 'Line Loss factor (LLF)', usage: O, type: int, length: 3 }
+  - { id: 'MTNR', name: 'Meter Serial Number', usage: O, type: char, minLength: 1, maxLength: 35 }
+  - { id: 'NDIG', name: 'Number of Digits', usage: O, type: int, length: 1 }
+- id: 'MED'
+  name: 'MESSAGE DETAILS'
+  values: 
+  - id: 'METO'
+    name: 'Message to'
+    usage: M
+    values: 
+    - { name: 'EAN Location Number of Department', usage: O, type: int, length: 13 }
+    - { name: 'Title of Person', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Name of Department of Person', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'MEDT'
+    name: 'Message Date and Time'
+    usage: M
+    values: 
+    - { name: 'Date of Message', usage: M, type: int, length: 6 }
+    - { name: 'Time of Message', usage: O, type: int, length: 6 }
+- id: 'MHD'
+  name: 'MESSAGE HEADER'
+  values: 
+  - { id: 'MSRF', name: 'Message Reference', usage: M, type: int, minLength: 1, maxLength: 12 }
+  - id: 'TYPE'
+    name: 'Type of Message'
+    usage: M
+    values: 
+    - { name: 'Type', usage: M, type: char, length: 6 }
+    - { name: 'Version Number', usage: M, type: int, length: 1 }
+- id: 'MOD'
+  name: 'CHARGE MODIFIERS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'MCAT', name: 'Modifier Category', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'MCDE', name: 'Modifier Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'MVAL'
+    name: 'Modifier Value'
+    usage: O
+    values: 
+    - { name: 'Modifier Value', usage: M, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+- id: 'MTR'
+  name: 'MESSAGE TRAILER'
+  values: 
+  - { id: 'NOSG', name: 'Number of Segments', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'NAM'
+  name: 'LOCATION NAME AND ADDRESS'
+  values: 
+  - { id: 'LNAM', name: 'Location Name', usage: M, type: char, minLength: 1, maxLength: 40 }
+  - id: 'LADD'
+    name: 'Location Address'
+    usage: M
+    values: 
+    - { name: 'Location Address Line 1', usage: M, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Location Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Location Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Location Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Location Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+  - { id: 'LTEL', name: 'Location Telephone Number', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - { id: 'LTLX', name: 'Location Telex Number', usage: O, type: int, minLength: 1, maxLength: 15 }
+- id: 'NOI'
+  name: 'NATURE OF INFORMATION'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TYPC', name: 'Type of Change', usage: M, type: char, minLength: 1, maxLength: 6 }
+  - id: 'DARA'
+    name: 'Date Range'
+    usage: O
+    values: 
+    - { name: 'Start Date', usage: O, type: int, length: 6 }
+    - { name: 'End Date', usage: O, type: int, length: 6 }
+- id: 'ODD'
+  name: 'ORDER AND DELIVERY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'ORNO'
+    name: 'Order Number and Date'
+    usage: M
+    values: 
+    - { name: 'Customer''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Order Placed by Customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Order Received by Supplier', usage: O, type: int, length: 6 }
+  - id: 'DELN'
+    name: 'Delivery Note Details'
+    usage: M
+    values: 
+    - { name: 'Delivery Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date of Document', usage: O, type: int, length: 6 }
+  - { id: 'NODU', name: 'Number of Delivery or Uplift Units ??', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - id: 'DEWT'
+    name: 'Delivery Weights'
+    usage: O
+    values: 
+    - { name: 'Vehicle Tare Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Total Goods Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+  - id: 'PODN'
+    name: 'Proof of Delivery Details'
+    usage: O
+    values: 
+    - { name: 'Proof of Delivery Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Goods Delivered to Customer', usage: O, type: int, length: 6 }
+  - { id: 'SCAR', name: 'Name of Carrier', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'DLOC'
+    name: 'Despatch Location'
+    usage: O
+    values: 
+    - { name: 'Supplier''s Despatch EAN Location', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'TLOC'
+    name: 'Trans-shipment Location'
+    usage: O
+    values: 
+    - { name: 'Supplier''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'JORF', name: 'Journey Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'OFT'
+  name: 'ORDER FILE TOTALS'
+  values: 
+  - { id: 'FTOR', name: 'File Total Number of Orders', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'OIR'
+  name: 'ORIGINAL INVOICE REFERENCES'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'INVN', name: 'Invoice Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'IVDT', name: 'Date of Invoice', usage: O, type: int, length: 6 }
+  - { id: 'TXDT', name: 'Tax-point Date', usage: O, type: int, length: 6 }
+  - id: 'ORNO'
+    name: 'Order Number and Date'
+    usage: O
+    values: 
+    - { name: 'Customer''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Order Placed by Customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Order Received by Supplier', usage: O, type: int, length: 6 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'OLD'
+  name: 'ORDER LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'OQTY'
+    name: 'Quantity Ordered'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Ordered', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Ordered', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'OUCT'
+    name: 'Ordering Unit Cost'
+    usage: O
+    values: 
+    - { name: 'Cost Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'PIND', name: 'Special Price Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'TFIN', name: 'To Follow Indicator', usage: O, type: char, length: 1 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'OOL'
+  name: 'ORDER OFFICE LOCATION'
+  values: 
+  - id: 'OLOC'
+    name: 'Order Office Location'
+    usage: O
+    values: 
+    - { name: 'Order Office EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Code for Order Office', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CTNM', name: 'Contact Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'OOAD'
+    name: 'Order Office Address'
+    usage: O
+    values: 
+    - { name: 'Order Office Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Order Office Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Order Office Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Order Office Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+- id: 'ORD'
+  name: 'ORDER REFERENCES'
+  values: 
+  - id: 'ORNO'
+    name: 'Order Number and Date'
+    usage: M
+    values: 
+    - { name: 'Customer''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Order Placed by Customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Order Received by Supplier', usage: O, type: int, length: 6 }
+  - { id: 'CLAS', name: 'Order Classification', usage: O, type: char, length: 1 }
+  - { id: 'ORCD', name: 'Order Code', usage: O, type: char, length: 1 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'ORF'
+  name: 'ORDER REFERENCES - DELIVERIES'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'ORNO'
+    name: 'Order Number and Date'
+    usage: M
+    values: 
+    - { name: 'Customer''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Order Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Order Placed by Customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Order Received by Supplier', usage: O, type: int, length: 6 }
+- id: 'OTR'
+  name: 'ORDER TRAILER'
+  values: 
+  - { id: 'LORD', name: 'Lines Ordered', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PAT'
+  name: 'PLANNED AVAILABILITY'
+  values: 
+  - { id: 'NOPA', name: 'Number of Availability REPORTs', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PDN'
+  name: 'PRODUCT DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s product number'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Code for the Traded unit', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for Traded unit', usage: O, type: int, length: 14 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - { id: 'IDID', name: 'EAN/ISSN Number', usage: O, type: int, minLength: 1, maxLength: 18 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'PDS'
+  name: 'PRODUCT DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: O
+    values: 
+    - { name: 'EAN-13 Article Number for the', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'Dun-14 Code for Traded Unit', usage: O, type: int, length: 14 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - { id: 'IDID', name: 'EAN/ISSN Number', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'PDT'
+  name: 'FILE TOTALS'
+  values: 
+  - { id: 'NOPR', name: 'Number of Product References', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PFT'
+  name: 'PICKING FILE TOTALS'
+  values: 
+  - { id: 'FTPC', name: 'File Total Number of Picking', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PIC'
+  name: 'PICKING INSTRUCTIONS DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CLOC'
+    name: 'Customer''s Location'
+    usage: M
+    values: 
+    - { name: 'Customer''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CNAM', name: 'Customer''s Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'CADD'
+    name: 'Customer''s Address'
+    usage: O
+    values: 
+    - { name: 'Customer''s Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Post Code', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { usage: O, type: char, minLength: 1, maxLength: 8 }
+  - id: 'QTYP'
+    name: 'Quantity to be Picked'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units to be Picked', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure to be Picked', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'PID'
+  name: 'PALLET IDENTITY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SESH', name: 'Serial Shipping Container Code', usage: M, type: int, length: 18 }
+- id: 'PLD'
+  name: 'PICKING LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'PREF', name: 'Picking Sheet Reference Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'PLO'
+  name: 'OUTLET LOCATION DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CLOC'
+    name: 'Customer Location'
+    usage: M
+    values: 
+    - { name: 'Customer''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Identity of Customer''s', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CNAM', name: 'Customer''s Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'CADD'
+    name: 'Customer''s Address'
+    usage: O
+    values: 
+    - { name: 'Customer''s Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+  - { id: 'LOCA', name: 'Location Activity Indicator', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'PLR'
+  name: 'PRICE LIST REFERENCES'
+  values: 
+  - id: 'PLND'
+    name: 'Price List Number'
+    usage: M
+    values: 
+    - { name: 'Suppliers Price List', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Customers Price List', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'DARA'
+    name: 'Date Range'
+    usage: O
+    values: 
+    - { name: 'Start Date', usage: O, type: int, length: 6 }
+    - { name: 'End Date', usage: O, type: int, length: 6 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification No.', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract No.', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'PPT'
+  name: 'PLANNING REPORT MESSAGES'
+  values: 
+  - { id: 'FTSR', name: 'File Total Detail Messages', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PRD'
+  name: 'PRODUCT DESCRIPTION'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'MSPR'
+    name: 'Selling on Price'
+    usage: O
+    values: 
+    - { name: 'Selling', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Marked Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - { id: 'VRMI', name: 'Variable Measure Indicator', usage: O, type: int, length: 1 }
+  - { id: 'TNAC', name: 'Temporarily Not Available Code', usage: O, type: int, length: 1 }
+  - id: 'DLED'
+    name: 'Delivery lead time'
+    usage: O
+    values: 
+    - { name: 'Working Days', usage: O, type: int, minLength: 1, maxLength: 3 }
+    - { name: 'Hours', usage: O, type: int, minLength: 1, maxLength: 2 }
+  - id: 'MOQY'
+    name: 'Ordering Quantity'
+    usage: O
+    values: 
+    - { name: 'Minimum Ordering Quantity', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Maximum Ordering Quantity', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Ordering Multiple', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - id: 'MOVL'
+    name: 'Ordering Value'
+    usage: O
+    values: 
+    - { name: 'Minimum Ordering Value', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Maximum Ordering Value', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - id: 'SRPR'
+    name: 'Supplier''s Reporting Reference'
+    usage: O
+    values: 
+    - { name: 'Reporting Group', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Reporting Sequence', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - { id: 'PRST', name: 'Product Status', usage: O, type: char, length: 1 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: O, type: char, length: 1 }
+  - id: 'DARA'
+    name: 'Date Range'
+    usage: O
+    values: 
+    - { name: 'Start Date', usage: O, type: int, length: 6 }
+    - { name: 'End Date', usage: O, type: int, length: 6 }
+- id: 'PRI'
+  name: 'PRICE HEADER'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'PAPD'
+    name: 'Price Applicability Dates'
+    usage: M
+    values: 
+    - { name: 'Start Date', usage: M, type: int, length: 6 }
+    - { name: 'End Date', usage: O, type: int, length: 6 }
+  - { id: 'GTYP', name: 'Graduation Type', usage: O, type: char, length: 1 }
+- id: 'PRN'
+  name: 'PRODUCT REFERENCES'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'LEVC'
+    name: 'Level References'
+    usage: M
+    values: 
+    - { name: 'Level Code', usage: M, type: char, length: 1 }
+    - { name: 'Authorisation', usage: M, type: char, length: 1 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'Manufacturer''s EAN-13 Article Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code', usage: O, type: int, length: 14 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'UCON'
+    name: 'Code for Unit Contained'
+    usage: O
+    values: 
+    - { name: 'Manufacturer''s EAN-13 Article', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code', usage: O, type: int, length: 14 }
+    - { name: 'Customer''s Own Brand EAN', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'CORI'
+    name: 'Code for Replaced Item'
+    usage: O
+    values: 
+    - { name: 'Manufacturer''s EAN-13 Article Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code', usage: O, type: int, length: 14 }
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+- id: 'PRP'
+  name: 'PRICE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQD', name: 'Fourth Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'PQGD'
+    name: 'Quantity Graduations'
+    usage: O
+    values: 
+    - { name: 'Traded Units From', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Measure From', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Traded Units To', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure To', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'PVGD'
+    name: 'Value Graduations'
+    usage: O
+    values: 
+    - { name: 'From', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'To', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - id: 'STPR'
+    name: 'Standard Price'
+    usage: M
+    values: 
+    - { name: 'Starting Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Nett Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+  - id: 'SBPR'
+    name: 'Split Box Price'
+    usage: O
+    values: 
+    - { name: 'Starting Price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+    - { name: 'Nett price', usage: O, type: num.4, minLength: 5, maxLength: 14 }
+- id: 'PRT'
+  name: 'PRICE FILE TOTALS'
+  values: 
+  - { id: 'NOPR', name: 'Number of Product References', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PRU'
+  name: 'PRODUCT DIMENSIONS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'UGWT'
+    name: 'Gross Weight of Unit'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'ULTH'
+    name: 'Length of Unit'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UWDT'
+    name: 'Width of Unit'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UHYT'
+    name: 'Height of Unit'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UVOL'
+    name: 'Volume of Unit'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'PRV'
+  name: 'PREPAYMENT RECEIVED (VAT'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'PPAM'
+    name: 'Prepayment Amount'
+    usage: M
+    values: 
+    - { name: 'Prepayment Amount', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'PADT', name: 'Prepayment Date', usage: M, type: int, length: 6 }
+  - { id: 'PAYB', name: 'Balance of Outstanding Prepayments', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'PTR'
+  name: 'PICKING TRAILER'
+  values: 
+  - { id: 'NOPP', name: 'Number of Product Lines Picked for this', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'LOCD', name: 'Number of Locations for Delivery', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'PVD'
+  name: 'PRODUCT VARIANT DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'VTCO', name: 'Variant Type Code', usage: M, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'VRDT', name: 'Variant Details', usage: M, type: char, minLength: 1, maxLength: 40 }
+  - id: 'OQTY'
+    name: 'Quantity Ordered'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Ordered', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Ordered', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'PYC'
+  name: 'PAYMENT DETAILS'
+  values: 
+  - id: 'PRRF'
+    name: 'Primary Reference'
+    usage: M
+    values: 
+    - { name: 'Related message indicator', usage: M, type: char, length: 1 }
+    - { name: 'Primary Reference', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'DATE', name: 'Date relating to message', usage: M, type: int, length: 6 }
+  - { id: 'SNIC', name: 'Supplier''s Network I/d code', usage: M, type: char, minLength: 1, maxLength: 14 }
+  - { id: 'PAYM', name: 'Payment Method', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'PYD'
+  name: 'PAYMENT DETAILS'
+  values: 
+  - id: 'PRRF'
+    name: 'Primary Reference'
+    usage: M
+    values: 
+    - { name: 'REMADV/PAYORD indicator', usage: M, type: char, length: 1 }
+    - { name: 'Primary Reference', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'DATE', name: 'Date relating to message', usage: M, type: int, length: 6 }
+  - { id: 'SNIC', name: 'Supplier''s Network Identity Code', usage: M, type: char, minLength: 1, maxLength: 14 }
+  - { id: 'PAYM', name: 'Payment Method', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'PYT'
+  name: 'SETTLEMENT TERMS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'PAYT', name: 'Terms of Payment', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'PAYD'
+    name: 'Payment Date and Terms'
+    usage: O
+    values: 
+    - { name: 'Payment Date', usage: M, type: int, length: 6 }
+    - { name: 'Settlement Discount Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - id: 'PAYY'
+    name: 'Settlemet Terms'
+    usage: O
+    values: 
+    - name: 'Number of days'
+      usage: M
+      values: 
+      - { name: 'Settlement Discount Percentage', usage: O, type: num.3, minLength: 4, maxLength: 6 }
+      - { name: 'Settlement Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'RCD'
+  name: 'RETURNS CONFIRMATION DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'QTYR'
+    name: 'Quantity Returned'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Returned', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Returned', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: O, type: char, length: 1 }
+- id: 'RDQ'
+  name: 'REQUIRED DELIVERY DATES'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'RDAT', name: 'Required Delivery Date', usage: O, type: int, length: 6 }
+  - id: 'RQTY'
+    name: 'Quantity Required'
+    usage: O
+    values: 
+    - { name: 'Number of Traded Units Required', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Required', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'REF'
+  name: 'ACCOUNT REFERENCE NUMBER'
+  values: 
+  - id: 'REFF'
+    name: 'Account Identifier'
+    usage: O
+    values: 
+    - { name: 'Supplier''s Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Customer''s Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'SCRF'
+    name: 'Specification/Contract References'
+    usage: O
+    values: 
+    - { name: 'Specification No.', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Contract No.', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'RFD'
+  name: 'REPORT REFERENCES AND DATES'
+  values: 
+  - { id: 'SEQA', name: 'First level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQD', name: 'Fourth level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'ORNO'
+    name: 'Order number and date'
+    usage: M
+    values: 
+    - { name: 'Customer''s order number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s order number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date order placed by customer', usage: O, type: int, length: 6 }
+    - { name: 'Date order received by supplier', usage: O, type: int, length: 6 }
+  - { id: 'RDAT', name: 'Required Delivery Date', usage: O, type: int, length: 6 }
+- id: 'RNB'
+  name: 'DATA NARRATIVE (RETURNS)'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: O, type: int, minLength: 1, maxLength: 10 }
+  - id: 'DNAC'
+    name: 'Data Narrative Code'
+    usage: O
+    values: 
+    - { name: 'Code Table Number', usage: O, type: int, minLength: 1, maxLength: 4 }
+    - { name: 'Code Value', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - id: 'RTEX'
+    name: 'Registered Text'
+    usage: O
+    values: 
+    - { name: 'First Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Second Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Third Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Fourth Registered Application Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Application Text', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'GNAR'
+    name: 'General Narrative'
+    usage: O
+    values: 
+    - { name: 'General Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'General Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+- id: 'RPI'
+  name: 'RETURNED PALLET IDENTITY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SESH', name: 'Serial Shipping Container Code', usage: M, type: int, length: 18 }
+- id: 'RST'
+  name: 'STATEMENT/REMITTANCE FILE'
+  values: 
+  - { id: 'TOTL', name: 'Total of Details Lines', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TOTV', name: 'Total of File Value', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'SAD'
+  name: 'STOCK ADJUSTMENT DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'QADJ'
+    name: 'Quantity Adjusted'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Adjusted', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Adjusted', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'RADJ', name: 'Reason for Adjustment', usage: M, type: char, length: 2 }
+  - { id: 'AUTH', name: 'Authority Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: M, type: char, length: 1 }
+  - { id: 'NSTA', name: 'New Status', usage: O, type: char, length: 1 }
+- id: 'SAR'
+  name: 'STOCK ADJUSTMENT REFERENCES'
+  values: 
+  - { id: 'SAJN', name: 'Stock Adjustment Reference Number', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'SAJD', name: 'Stock Adjustment Date', usage: M, type: int, length: 6 }
+- id: 'SAT'
+  name: 'STOCK ADJUSTMENT TRAILER'
+  values: 
+  - { id: 'SLAJ', name: 'Stock Lines in this Adjustment', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'SBK'
+  name: 'SUPPLIER''S BANK DETAILS'
+  values: 
+  - { id: 'BBID', name: 'Bank/Branch Identifier', usage: M, type: char, minLength: 1, maxLength: 11 }
+  - id: 'ACID'
+    name: 'Account Identifier'
+    usage: M
+    values: 
+    - { name: 'Account Number', usage: M, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Account Name', usage: O, type: char, minLength: 1, maxLength: 35 }
+- id: 'SDT'
+  name: 'SUPPLIER DETAILS'
+  values: 
+  - id: 'SIDN'
+    name: 'Supplier''s Identity'
+    usage: M
+    values: 
+    - { name: 'Supplier''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Suppliers''s Identity Allocated by', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'SNAM', name: 'Supplier''s Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'SADD'
+    name: 'Supplier''s Address'
+    usage: O
+    values: 
+    - { name: 'Supplier''s Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Supplier''s Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Supplier''s Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Supplier''s Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Supplier''s Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+  - id: 'VATN'
+    name: 'Supplier''s VAT Registration Number'
+    usage: O
+    values: 
+    - { name: 'Numeric VAT Registration Number', usage: O, type: int, length: 9 }
+    - { name: 'Alphanumeric VAT Registration', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'SFC'
+  name: 'TIME BASE CONTROL TOTALS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'REFP'
+    name: 'Period Reference'
+    usage: M
+    values: 
+    - { name: 'Summary Period', usage: O, type: char, length: 1 }
+    - { name: 'Report period number', usage: O, type: int, minLength: 1, maxLength: 2 }
+    - { name: 'Period end date', usage: O, type: int, length: 6 }
+  - id: 'QPER'
+    name: 'Quantity Data'
+    usage: O
+    values: 
+    - { name: 'Total traded units', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total variable units', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Total Financial units', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Currency indicator', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'SFL'
+  name: 'PLANNING REPORT TRAILER'
+  values: 
+  - { id: 'STLD', name: 'Data Lines', usage: O, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'STLN', name: 'Number of Locations Reported', usage: O, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'STPT', name: 'Number of Products Reported', usage: O, type: int, minLength: 1, maxLength: 10 }
+- id: 'SFP'
+  name: 'PLANNING REPORT DATA'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'REFP'
+    name: 'Period Reference'
+    usage: M
+    values: 
+    - { name: 'Summary period', usage: O, type: char, length: 1 }
+    - { name: 'Report period number', usage: O, type: int, minLength: 1, maxLength: 2 }
+    - { name: 'Period end date', usage: O, type: int, length: 6 }
+  - id: 'QPER'
+    name: 'Quantity Data'
+    usage: O
+    values: 
+    - { name: 'Total Traded units', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Variable units', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Total Financial units', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Currency indicator', usage: O, type: char, length: 3 }
+- id: 'SFR'
+  name: 'PLANNING REPORT RULES'
+  values: 
+  - id: 'RTRS'
+    name: 'Report time rules'
+    usage: M
+    values: 
+    - { name: 'Date of first entry', usage: M, type: int, length: 6 }
+    - { name: 'Report period base', usage: M, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Number of report segments', usage: M, type: int, minLength: 1, maxLength: 3 }
+    - { name: 'Date at end of period', usage: O, type: int, length: 6 }
+    - { name: 'Number of periods in a base', usage: O, type: int, minLength: 1, maxLength: 3 }
+  - { id: 'REPT', name: 'Report Type', usage: M, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'REPU', name: 'Report Function Indicator', usage: O, type: char, length: 3 }
+- id: 'SFS'
+  name: 'FUNCTION DATA SEGMENT'
+  values: 
+  - { id: 'SEQA', name: 'First level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQD', name: 'Fourth level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'REPU', name: 'Report Function Indicator', usage: M, type: char, length: 3 }
+  - id: 'QPER'
+    name: 'Quantity Data'
+    usage: M
+    values: 
+    - { name: 'Total traded units', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total variable units', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Total Financial units', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Currency', usage: O, type: char, length: 3 }
+- id: 'SFX'
+  name: 'FUNCTION DATA SEGMENT'
+  values: 
+  - { id: 'SEQA', name: 'First level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third level sequence number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'REPU', name: 'Report Function Indicator', usage: M, type: char, length: 3 }
+  - id: 'QPER'
+    name: 'Quantity Data'
+    usage: M
+    values: 
+    - { name: 'Total traded units', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total variable units', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+    - { name: 'Total Financial units', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Currency indicator', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'SLD'
+  name: 'STOCK LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: M, type: char, length: 1 }
+  - id: 'SQTY'
+    name: 'Quantity Held'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units Held', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Measure Held', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+- id: 'SLO'
+  name: 'UNIT LOCATION'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CLOC'
+    name: 'Customer''s Location'
+    usage: M
+    values: 
+    - { name: 'Customer''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Own Location code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'CNAM', name: 'Customer''s Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'CADD'
+    name: 'Customer''s Address'
+    usage: O
+    values: 
+    - { name: 'Customer''s Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Customer''s Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+- id: 'SNT'
+  name: 'SNAPSHOT FILE TOTALS'
+  values: 
+  - { id: 'FTNS', name: 'File Total Number of Snapshots', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'SRD'
+  name: 'STATEMENT/REMITTANCE LINE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'CLOC'
+    name: 'Customer''s Location'
+    usage: M
+    values: 
+    - { name: 'Customer''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s identification of Customer''s', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'LINE', name: 'Statement/Remittance Line Code', usage: O, type: char, length: 2 }
+  - id: 'LIDR'
+    name: 'Line Document Reference'
+    usage: M
+    values: 
+    - { name: 'Line Document Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Line Document Date', usage: O, type: int, length: 6 }
+  - { id: 'LIDA', name: 'Line Document Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'LIDT', name: 'Line Document Total (excluding VAT and', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'LIDV', name: 'Line Document VAT', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'LIDD', name: 'Line Document Discount Taken', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'SRF'
+  name: 'STOCK REFERENCE'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+- id: 'SRT'
+  name: 'STATEMENT/REMITTANCE'
+  values: 
+  - { id: 'SRLC', name: 'Statement/Remittance Line Count', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SRAP', name: 'Statement/Remittance Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SRDT', name: 'Statement/Remittance Document Totals', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SRVT', name: 'Statement/Remittance VAT Totals', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SDCD', name: 'Statement/Remittance Discount Totals', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SETC', name: 'Settlement Discount Totals', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'SSR'
+  name: 'SNAPSHOT REFERENCES'
+  values: 
+  - { id: 'SSRN', name: 'Snapshot Reference Number', usage: M, type: char, minLength: 1, maxLength: 17 }
+  - id: 'MEDT'
+    name: 'Message Date and Time'
+    usage: M
+    values: 
+    - { name: 'Date of Message', usage: M, type: int, length: 6 }
+    - { name: 'Time of Message', usage: O, type: int, length: 6 }
+  - { id: 'SSCC', name: 'Snapshot Category Code', usage: M, type: char, length: 2 }
+- id: 'SST'
+  name: 'SNAPSHOT TRAILER'
+  values: 
+  - { id: 'SLSN', name: 'Stock Lines in this Snapshot', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'STD'
+  name: 'STORAGE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQC', name: 'Third Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SMCO', name: 'Storage Medium Code', usage: O, type: char, minLength: 1, maxLength: 3 }
+  - { id: 'UPAL', name: 'Traded Unit Quantity per Storage Medium', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - { id: 'ULAY', name: 'Traded Unit Quantity per Layer', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - { id: 'LPAL', name: 'Layers per Storage Medium', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - id: 'UGST'
+    name: 'Gross Weight of Storage Medium'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'ULST'
+    name: 'Length of Storage Medium'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UWST'
+    name: 'Width of Storage Medium'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UHST'
+    name: 'Height of storage medium'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UVST'
+    name: 'Volume of Storage Medium'
+    usage: O
+    values: 
+    - { name: 'Total Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Unit of Measure', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - { id: 'RSTI', name: 'Returnable Storage Medium Indicator', usage: O, type: char, length: 1 }
+  - { id: 'CSTI', name: 'Chargeable Storage Medium Indicator', usage: O, type: char, length: 1 }
+  - { id: 'NMRS', name: 'Negotiated Minimum Remaining Shelf', usage: O, type: int, minLength: 1, maxLength: 3 }
+  - { id: 'TPKG', name: 'Type of Packaging', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'STOI', name: 'Storage Information', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'TMAX', name: 'Maximum Storage Temperature', usage: O, type: int, minLength: 1, maxLength: 3 }
+  - { id: 'TMIN', name: 'Minimum Storage Temperature', usage: O, type: int, minLength: 1, maxLength: 3 }
+  - { id: 'PRPF', name: 'Product Profile', usage: O, type: char, length: 1 }
+- id: 'STL'
+  name: 'VAT RATE INVOICE SUB-TRAILER'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'ZATC', name: 'VAT Rate Category Code Custom', usage: O, type: char, length: 1 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - { id: 'NRIL', name: 'Number of Item Lines', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'LVLA', name: 'Line Sub-Total Amount (before VAT)', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'QYDA', name: 'Discount Amount for Invoice Quantity', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VLDA', name: 'Discount Amount for Invoice Value', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SURA', name: 'Surcharge Amount', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SSUB', name: 'Sub-Total Subsidy', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'EVLA', name: 'Extended Sub-Total Amount (before', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SEDA', name: 'Sub-Total Settlement Discount Amount', usage: O, type: num.2, minLength: 1, maxLength: 12 }
+  - { id: 'ASDA', name: 'Extended Sub-Total Amount (after', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VATA', name: 'VAT Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'APSE', name: 'Payable Sub-Total Amount (before', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'APSI', name: 'Payable Sub-Total Amount (after', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'STT'
+  name: 'STATEMENT TO'
+  values: 
+  - id: 'SLOC'
+    name: 'Statement Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Statement Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'TCM'
+  name: 'CREDIT ADVICE MESSAGE TOTALS'
+  values: 
+  - { id: 'FTNC', name: 'File Total Number of Credit Advice', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TVLC', name: 'Total Value of Credit Advice Messages', usage: M, type: num.2, minLength: 3, maxLength: 15 }
+- id: 'TDM'
+  name: 'DEBIT ADVICE MESSAGE TOTALS'
+  values: 
+  - { id: 'FTND', name: 'File Total Number of Debit Advice', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TVLD', name: 'Total Value of Debit Advice Messages', usage: M, type: num.2, minLength: 3, maxLength: 15 }
+- id: 'TEM'
+  name: 'EXCEPTION CONDITION MESSAGE'
+  values: 
+  - { id: 'FTNE', name: 'File Total Number of Exception Condition', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'TLR'
+  name: 'INVOICE TRAILER'
+  values: 
+  - { id: 'NSTL', name: 'Number of Total Segments', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'LVLT', name: 'Lines Total Amount (before settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'QYDT', name: 'Total Discount Amount for Invoice', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VLDT', name: 'Total Discount Amount for Invoice Value', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SURT', name: 'Total Surcharge Amount', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TSUB', name: 'Total Subsidy Amount', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'EVLT', name: 'Total Extended Amount (before settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'SEDT', name: 'Total Settlement Discount Amount', usage: O, type: num.2, minLength: 0, maxLength: 12 }
+  - { id: 'ASDT', name: 'Total Amount (after settlement discount', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TVAT', name: 'Total VAT Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TPSE', name: 'Total payable (before settlement discount)', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'TPSI', name: 'Total payable (after settlement discount)', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'TOT'
+  name: 'FILE TOTALS'
+  values: 
+  - { id: 'FASE', name: 'File Total Amount (before VAT and', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'FASI', name: 'File Total Amount (before VAT but after', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'FVAT', name: 'File Total VAT Amount', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'FPSE', name: 'File Total Payable (before settlement', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'FPSI', name: 'File Total Payable (after settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'FTNI', name: 'File Total Number of Invoice Messages', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'TPM'
+  name: 'PAYMENT MESSAGE TOTALS'
+  values: 
+  - { id: 'FTNP', name: 'File Total Number of Payment Messages', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TVLP', name: 'Total Value of Payment Messages', usage: M, type: num.2, minLength: 3, maxLength: 15 }
+- id: 'TRA'
+  name: 'TRANSMISSION TO'
+  values: 
+  - id: 'ITRA'
+    name: 'Invoice Transmission Recipient'
+    usage: O
+    values: 
+    - { name: 'EAN Location number', usage: O, type: int, length: 13 }
+    - { name: 'Customer''s Code for Transmission', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'TTL'
+  name: 'UTILITY BILL FILE TOTALS'
+  values: 
+  - id: 'FASU'
+    name: 'Bill File Total Amount before VAT'
+    usage: M
+    values: 
+    - { name: 'Bill File Total Amount before VAT', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'UVAT'
+    name: 'Bill File Total VAT Amount'
+    usage: M
+    values: 
+    - { name: 'Bill File Total VAT Amount', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'FTOP'
+    name: 'File Total of Payment Details'
+    usage: O
+    values: 
+    - { name: 'File Total of Payment Details', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'FBAB'
+    name: 'File Total Balance Brought Forward'
+    usage: O
+    values: 
+    - { name: 'File Total Balance Brought Forward', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'FPSU'
+    name: 'Bill File Total Payable including'
+    usage: M
+    values: 
+    - { name: 'Bill File Total Payable including', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'FTNI', name: 'File Total Number of Invoices', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'TXT'
+  name: 'TEXT'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'TEXT', name: 'Text', usage: M, type: char, minLength: 1, maxLength: 50 }
+- id: 'TYP'
+  name: 'TRANSACTION TYPE DETAILS'
+  values: 
+  - { id: 'TCDE', name: 'Transaction Code', usage: M, type: int, length: 4 }
+  - { id: 'TTYP', name: 'Transaction Type', usage: O, type: char, minLength: 1, maxLength: 12 }
+- id: 'UCD'
+  name: 'UPLIFT CONFIRMATION DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UPLQ'
+    name: 'Uplift Quantity'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units in Uplift', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Uplift Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: O, type: char, length: 1 }
+  - id: 'DUAC'
+    name: 'Delivery/Uplift Action Details'
+    usage: O
+    values: 
+    - { name: 'Reason for Variance', usage: M, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Delivery Confirmation Action', usage: O, type: char, length: 1 }
+- id: 'UCT'
+  name: 'UPLIFT CONFIRMATION TRAILER'
+  values: 
+  - { id: 'LCON', name: 'Lines Confirmed', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'UDD'
+  name: 'UPLIFT REFERENCES'
+  values: 
+  - id: 'INRF'
+    name: 'Instruction References'
+    usage: M
+    values: 
+    - { name: 'Customer''s Instruction Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Instruction Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Instruction placed by Customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Instruction received by Supplier', usage: O, type: int, length: 6 }
+  - id: 'UPLN'
+    name: 'Uplift Note Details'
+    usage: M
+    values: 
+    - { name: 'Uplift Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date of Uplift Note', usage: O, type: int, length: 6 }
+  - { id: 'NODU', name: 'Number of Delivery/Uplift Units', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - id: 'UPWT'
+    name: 'Uplift Weights'
+    usage: O
+    values: 
+    - { name: 'Vehicle Tare Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Total Goods Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+  - id: 'POUN'
+    name: 'Proof of Uplift Details'
+    usage: O
+    values: 
+    - { name: 'Proof of Uplift Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Goods Uplifted from Customer', usage: O, type: int, length: 6 }
+  - { id: 'SCAR', name: 'Name of Carrier', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'DLOC'
+    name: 'Despatch Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'TLOC'
+    name: 'Transshipment Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Own Location Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'JORF', name: 'Journey Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+- id: 'UFT'
+  name: 'UPLIFT FILE TOTALS'
+  values: 
+  - { id: 'FTUP', name: 'File Total Number of Uplifts', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'ULD'
+  name: 'UPLIFT LINE DETAILS'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'SEQB', name: 'Second Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'SPRO'
+    name: 'Supplier''s Product Number'
+    usage: M
+    values: 
+    - { name: 'EAN-13 Article Number for the Traded', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Code for the Traded Unit', usage: O, type: char, minLength: 1, maxLength: 30 }
+    - { name: 'DUN-14 Code for the Traded Unit', usage: O, type: int, length: 14 }
+  - { id: 'SACU', name: 'Supplier''s EAN Article Number for the', usage: O, type: int, length: 13 }
+  - id: 'CPRO'
+    name: 'Customer''s Product Number'
+    usage: O
+    values: 
+    - { name: 'Customer''s Own Brand EAN Number', usage: O, type: int, length: 15 }
+    - { name: 'Customer''s Item Code', usage: O, type: char, minLength: 1, maxLength: 30 }
+  - id: 'UNOR'
+    name: 'Unit of Ordering'
+    usage: M
+    values: 
+    - { name: 'Consumer Units in Traded Unit', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Ordering Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'UPLQ'
+    name: 'Uplift Quantity'
+    usage: M
+    values: 
+    - { name: 'Number of Traded Units in Uplift', usage: O, type: int, minLength: 1, maxLength: 15 }
+    - { name: 'Total Uplift Measure', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Measure Indicator', usage: O, type: char, minLength: 1, maxLength: 6 }
+  - id: 'TDES'
+    name: 'Traded Unit Description'
+    usage: O
+    values: 
+    - { name: 'Traded Unit Description Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Traded Unit Description Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - { id: 'SSTC', name: 'Stock Status Code', usage: O, type: char, length: 1 }
+- id: 'UPL'
+  name: 'UPLIFT REFERENCES'
+  values: 
+  - id: 'UPLN'
+    name: 'Uplift Note Details'
+    usage: M
+    values: 
+    - { name: 'Uplift Note Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date of Uplift Notes', usage: O, type: int, length: 6 }
+  - { id: 'NODU', name: 'Number of Delivery/Uplift Units', usage: O, type: int, minLength: 1, maxLength: 15 }
+  - { id: 'SCAR', name: 'Name of Carrier', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'UPWT'
+    name: 'Uplift Weights'
+    usage: O
+    values: 
+    - { name: 'Vehicle Tare Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+    - { name: 'Total Goods Weight', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+  - { id: 'UPVL', name: 'Uplift Volume', usage: O, type: num.3, minLength: 4, maxLength: 13 }
+  - { id: 'EUDT', name: 'Earliest Uplift Date', usage: O, type: int, length: 6 }
+  - { id: 'LUDT', name: 'Latest Uplift Date', usage: O, type: int, length: 6 }
+  - id: 'UINS'
+    name: 'Uplift Instruction Narrative'
+    usage: O
+    values: 
+    - { name: 'Uplift Instruction Narrative Line 1', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Uplift Instruction Narrative Line 2', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Uplift Instruction Narrative Line 3', usage: O, type: char, minLength: 1, maxLength: 40 }
+    - { name: 'Uplift Instruction Narrative Line 4', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'DLOC'
+    name: 'Despatch Location'
+    usage: O
+    values: 
+    - { name: 'Supplier''s EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - id: 'TLOC'
+    name: 'Transshipment Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Supplier''s Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'JORF', name: 'Journey Reference', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'TPST', name: 'Transaction Planning Status', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'UPS'
+  name: 'UPLIFT SUPPLEMENTARY DATA'
+  values: 
+  - id: 'ELOC'
+    name: 'Delivery to Location'
+    usage: O
+    values: 
+    - { name: 'EAN Location Number', usage: O, type: int, length: 13 }
+    - { name: 'Own Location Code', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Suppliers id.', usage: O, type: char, minLength: 1, maxLength: 17 }
+  - { id: 'DNAM', name: 'Delivery to Name', usage: O, type: char, minLength: 1, maxLength: 40 }
+  - id: 'DADD'
+    name: 'Delivery to Address'
+    usage: O
+    values: 
+    - { name: 'Delivery Address Line 1', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Delivery Address Line 2', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Delivery Address Line 3', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Delivery Address Line 4', usage: O, type: char, minLength: 1, maxLength: 35 }
+    - { name: 'Delivery Post Code', usage: O, type: char, minLength: 1, maxLength: 8 }
+  - { id: 'EDAT', name: 'Earliest Delivery Date', usage: O, type: int, length: 6 }
+  - { id: 'LDAT', name: 'Late Delivery Date', usage: O, type: int, length: 6 }
+  - id: 'RATM'
+    name: 'Required Arrival Time'
+    usage: O
+    values: 
+    - { name: 'Earliest Time', usage: O, type: int, length: 4 }
+    - { name: 'Latest Time', usage: O, type: int, length: 4 }
+- id: 'URF'
+  name: 'UPLIFT INSTRUCTION REFERENCES'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - id: 'INRF'
+    name: 'Instruction References'
+    usage: M
+    values: 
+    - { name: 'Customer''s Instruction Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Supplier''s Instruction Number', usage: O, type: char, minLength: 1, maxLength: 17 }
+    - { name: 'Date Instruction placed by customer', usage: O, type: int, length: 6 }
+    - { name: 'Date Instruction received by supplier', usage: O, type: int, length: 6 }
+- id: 'UST'
+  name: 'UPLIFT STATUS'
+  values: 
+  - { id: 'UPLC', name: 'Uplift Condition', usage: M, type: char, minLength: 1, maxLength: 3 }
+  - id: 'DUAC'
+    name: 'Delivery/Uplift Action Details'
+    usage: O
+    values: 
+    - { name: 'Reason for Variance', usage: M, type: char, minLength: 1, maxLength: 3 }
+    - { name: 'Delivery Confirmation Action', usage: O, type: char, length: 1 }
+- id: 'UTR'
+  name: 'UPLIFT TRAILER'
+  values: 
+  - { id: 'LUPL', name: 'Lines Uplifted', usage: M, type: int, minLength: 1, maxLength: 10 }
+- id: 'VAT'
+  name: 'VALUE ADDED TAX'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'NDVT', name: 'Number of Days'' VAT', usage: O, type: int, minLength: 1, maxLength: 3 }
+  - { id: 'PNDP', name: 'Percentage Qualifying for Lower / Zero VAT', usage: O, type: num.3, minLength: 4, maxLength: 6 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - id: 'UVLA'
+    name: 'Total Charge for VAT Category Before VAT'
+    usage: M
+    values: 
+    - { name: 'Total Charge Before VAT', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'UVTT'
+    name: 'VAT Amount Payable'
+    usage: M
+    values: 
+    - { name: 'VAT Amount Payable', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'UCSI'
+    name: 'Total Charge for VAT Category including'
+    usage: M
+    values: 
+    - { name: 'Total Charge including VAT', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Line Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - { id: 'NRIL', name: 'Number of Item Lines', usage: O, type: int, minLength: 1, maxLength: 4 }
+  - { id: 'RFLV', name: 'Reason for Lower/Zero VAT Rate', usage: O, type: char, minLength: 1, maxLength: 3 }
+- id: 'VRS'
+  name: 'VAT RATE SUMMARY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - { id: 'VSDE', name: 'File Sub-Total Amount (before settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VSDI', name: 'File Sub-Total Amount (after settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VVAT', name: 'File VAT Sub-Total', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VPSE', name: 'File Sub-Total Payable (before settlement', usage: O, type: num.2, minLength: 3, maxLength: 12 }
+  - { id: 'VPSI', name: 'File Sub-Total Payable (after settlement', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+- id: 'VTS'
+  name: 'VAT RATE SUMMARY'
+  values: 
+  - { id: 'SEQA', name: 'First Level Sequence Number', usage: M, type: int, minLength: 1, maxLength: 10 }
+  - { id: 'VATC', name: 'VAT Rate Category Code', usage: M, type: char, length: 1 }
+  - { id: 'VATP', name: 'VAT Rate Percentage', usage: M, type: num.3, minLength: 4, maxLength: 6 }
+  - id: 'USDI'
+    name: 'File Total for VAT Category'
+    usage: M
+    values: 
+    - { name: 'File Total for VAT Category', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'VTVC'
+    name: 'File Total VAT for VAT Category'
+    usage: M
+    values: 
+    - { name: 'File Total VAT for VAT', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }
+  - id: 'UPSI'
+    name: 'File Total for VAT Category (including'
+    usage: M
+    values: 
+    - { name: 'File Total for VAT Category (including', usage: M, type: num.2, minLength: 3, maxLength: 12 }
+    - { name: 'Credit Indicator', usage: O, type: char, minLength: 1, maxLength: 4 }

@@ -1,0 +1,55 @@
+form: TRADACOMS
+version: 'INVOIC8'
+imports: [ 'basedefs.esl' ]
+structures: 
+- id: 'INVFIL'
+  name: 'INVFIL:6'
+  class: '1'
+  data: 
+  - { idRef: 'MHD', position: '01', usage: M }
+  - { idRef: 'TYP', position: '02', usage: M }
+  - { idRef: 'SDT', position: '03', usage: M }
+  - { idRef: 'CDT', position: '04', usage: M }
+  - { idRef: 'DNA', position: '05', usage: O, count: '>1' }
+  - { idRef: 'FIL', position: '06', usage: M }
+  - { idRef: 'FDT', position: '07', usage: O }
+  - { idRef: 'ACD', position: '08', usage: O }
+  - { idRef: 'MTR', position: '09', usage: M }
+- id: 'INVOIC'
+  name: 'INVOIC:8'
+  class: '2'
+  data: 
+  - { idRef: 'MHD', position: '01', usage: M }
+  - { idRef: 'CLO', position: '02', usage: M }
+  - { idRef: 'IRF', position: '03', usage: M }
+  - { idRef: 'PYT', position: '04', usage: O, count: '>1' }
+  - { idRef: 'DNA', position: '05', usage: O, count: '>1' }
+  - groupId: 'ODD'
+    count: '>1'
+    usage: O
+    items: 
+    - { idRef: 'ODD', position: '06', usage: O }
+    - groupId: 'ILD'
+      count: '>1'
+      usage: O
+      items: 
+      - { idRef: 'ILD', position: '07', usage: O }
+      - { idRef: 'CIA', position: '08', usage: O, count: '>1' }
+      - { idRef: 'DNC', position: '09', usage: O, count: '>1' }
+    - { idRef: 'STL', position: '10', usage: O }
+  - { idRef: 'TLR', position: '11', usage: O }
+  - { idRef: 'MTR', position: '12', usage: O }
+- id: 'INVTLR'
+  name: 'INVTLR:5'
+  class: '4'
+  data: 
+  - { idRef: 'MHD', position: '01', usage: M }
+  - { idRef: 'TOT', position: '02', usage: M }
+  - { idRef: 'MTR', position: '03', usage: M }
+- id: 'VATTLR'
+  name: 'VATTLR:6'
+  class: '3'
+  data: 
+  - { idRef: 'MHD', position: '01', usage: M }
+  - { idRef: 'VRS', position: '02', usage: M, count: '>1' }
+  - { idRef: 'MTR', position: '03', usage: M }
